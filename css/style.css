@@ -139,3 +139,32 @@ table {
     z-index: 2;
     cursor: pointer;
 }
+
+/* clock */
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1050%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-weight: bold;
+    width: 530px;
+    display: flex;
+    justify-content: center;
+}
+.clock > div {
+    height: 150px;
+}
+.clock #clock {
+    width: 430px;
+}
+.clock > div:first-child {
+    width: 50px;
+    margin-left: 25px;
+}
+.clock > div:last-child {
+    width: 50px;
+    margin-left: 25px;
+}

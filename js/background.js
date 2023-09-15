@@ -2,7 +2,7 @@ const BACKGROUND_KEY = "background";
 const url = "https://cataas.com/cat?tags=cute&json=true&width=1000";
 const backgroundItem = document.querySelector(".background-item");
 const mainView = document.querySelector(".main-view");
-const skip = document.querySelector(".skip");
+const skip = document.querySelector("#skip");
 
 function getBackground() {
     fetch(url)
