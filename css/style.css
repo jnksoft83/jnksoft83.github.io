@@ -285,7 +285,7 @@ header {
 /* todo */
 .todo-panel {
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
     left: 50%;
     color: #fff;
     transform: translate(-50%, 0);
@@ -310,4 +310,37 @@ header {
 
 .todo-panel input::placeholder {
     color: #fff;
+}
+.todo-panel ul {
+    height: 280px;
+    margin-top: 20px;
+    overflow: auto;
+}
+.todo-panel li {
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+    line-height: 40px;
+    text-shadow: 0px 0px 10px #000;
+}
+.todo-panel li.complete span {
+    text-decoration: line-through;
+}
+
+.todo-panel li button {
+    width: 25px;
+    height: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.todo-panel li button.complete {
+    background-image: url('../img/check.svg');
+}
+.todo-panel li button.delete {
+    background-image: url('../img/trash.svg');
 }
