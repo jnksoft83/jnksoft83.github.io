@@ -7,71 +7,64 @@
     <title>Momentum App</title>
 </head>
 <body>
-    <div class="overlay loading-overlay">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="loading-logo" fill="#ccc">
-            <path d="M256 0C114.615 0 0 114.615 0 256s114.615 256 256 256 256-114.615 256-256S397.385 0 256 0zm122.763 344.309h-15.484v-95.746c0-34.76-18.012-54.983-47.715-54.983-27.176 0-50.875 20.856-50.875 56.879v93.85h-15.484v-96.695c0-33.5-18.327-54.035-47.083-54.035s-51.507 25.28-51.507 57.827v92.9h-15.483V183.151h15.483v28.756c10.428-16.748 24.964-32.548 53.719-32.548 28.124 0 45.5 16.116 54.352 34.76 10.428-18.012 27.807-34.76 58.143-34.76 38.235 0 61.935 26.86 61.935 67.307z"></path>
-        </svg>
-    </div>
-
-    <div class="main-view hidden">
+    <div class="main-view">
         <div class="backgrounds">
             <div class="background">
                 <div class="background-item"></div>
             </div>
-            <div class="background-overlay"></div>
         </div>
 
-        <div class="clock">
-            <div id="toggle">
-                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="dash-icon icon icon-toggle">
-                    <path xmlns="http://www.w3.org/2000/svg" d="M3.879 13.879A3 3 0 108.12 18.12L3.88 13.88zM18.12 8.12A3 3 0 1013.88 3.88L18.12 8.12zm-10 5.758A3 3 0 103.88 18.12L8.12 13.88zM13.88 28.12a3 3 0 104.242-4.242L13.88 28.12zM53 27a3 3 0 106 0h-6zm3-11h3a3 3 0 00-3-3v3zM6 13a3 3 0 100 6v-6zm2.121 5.121l10-10L13.88 3.88l-10 10L8.12 18.12zm-4.242 0l10 10 4.242-4.242-10-10L3.88 18.12zM59 27V16h-6v11h6zm-3-14H6v6h50v-6zM60.121 50.121a3 3 0 10-4.242-4.242l4.242 4.242zM45.88 55.88a3 3 0 104.242 4.242L45.88 55.88zm10-5.758a3 3 0 104.242-4.242L55.88 50.12zM50.12 35.88a3 3 0 10-4.242 4.242l4.242-4.242zM11 37a3 3 0 10-6 0h6zM8 48H5a3 3 0 003 3v-3zm50 3a3 3 0 100-6v6zm-2.121-5.121l-10 10 4.242 4.242 10-10-4.242-4.242zm4.242 0l-10-10-4.242 4.242 10 10 4.242-4.242zM5 37v11h6V37H5zm3 14h50v-6H8v6z"></path>
-                </svg>
+        <header>
+            <div id="quote"></div>
+            <div id="weather">
+                <span></span>
+                <span></span>
             </div>
-            <div id="clock">00:00</div>
-            <div id="skip">
-                <svg viewBox="0 0 249.05 132.12" class="icon icon-skip" xmlns="http://www.w3.org/2000/svg">
-                    <circle xmlns="http://www.w3.org/2000/svg" cx="115.5" cy="108.62" r="23"></circle>
-                    <path xmlns="http://www.w3.org/2000/svg" d="M291.5,281A22.5,22.5,0,1,1,269,303.5,22.52,22.52,0,0,1,291.5,281m0-1A23.5,23.5,0,1,0,315,303.5,23.5,23.5,0,0,0,291.5,280Z" transform="translate(-176 -194.88)"></path>
-                    <path xmlns="http://www.w3.org/2000/svg" class="arrow" d="M399,257.5a135.18,135.18,0,0,0-41.16-42.17c-22.7-14.74-49.38-21.92-75.15-20.2a108.71,108.71,0,0,0-65.16,27c-19.91,17.5-33.76,41.79-41.18,72.19a13.52,13.52,0,0,0,9.92,16.32,13.66,13.66,0,0,0,3.21.38,13.51,13.51,0,0,0,13.11-10.3c6.07-24.92,17.1-44.54,32.76-58.31a82,82,0,0,1,49.13-20.32c20-1.33,40.81,4.32,58.65,15.9A108.07,108.07,0,0,1,374,268.51l-30,13.2,72.43,40.36,8.6-76Z" transform="translate(-176 -194.88)"></path>
-                </svg>
+        </header>
+
+        <div class="center-panel">
+            <div id="time">00:00</div>
+            <div class="button-area">
+                <div class="time-type-toggle">
+                    <button type="button" id="toggle" title="AM/PM">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="dash-icon icon icon-toggle">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M3.879 13.879A3 3 0 108.12 18.12L3.88 13.88zM18.12 8.12A3 3 0 1013.88 3.88L18.12 8.12zm-10 5.758A3 3 0 103.88 18.12L8.12 13.88zM13.88 28.12a3 3 0 104.242-4.242L13.88 28.12zM53 27a3 3 0 106 0h-6zm3-11h3a3 3 0 00-3-3v3zM6 13a3 3 0 100 6v-6zm2.121 5.121l10-10L13.88 3.88l-10 10L8.12 18.12zm-4.242 0l10 10 4.242-4.242-10-10L3.88 18.12zM59 27V16h-6v11h6zm-3-14H6v6h50v-6zM60.121 50.121a3 3 0 10-4.242-4.242l4.242 4.242zM45.88 55.88a3 3 0 104.242 4.242L45.88 55.88zm10-5.758a3 3 0 104.242-4.242L55.88 50.12zM50.12 35.88a3 3 0 10-4.242 4.242l4.242-4.242zM11 37a3 3 0 10-6 0h6zM8 48H5a3 3 0 003 3v-3zm50 3a3 3 0 100-6v6zm-2.121-5.121l-10 10 4.242 4.242 10-10-4.242-4.242zm4.242 0l-10-10-4.242 4.242 10 10 4.242-4.242zM5 37v11h6V37H5zm3 14h50v-6H8v6z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="background-change">
+                    <button type="button" id="change" title="배경이미지 변경">
+                        <svg viewBox="0 0 249.05 132.12" class="icon icon-skip" xmlns="http://www.w3.org/2000/svg">
+                            <circle xmlns="http://www.w3.org/2000/svg" cx="115.5" cy="108.62" r="23"></circle>
+                            <path xmlns="http://www.w3.org/2000/svg" d="M291.5,281A22.5,22.5,0,1,1,269,303.5,22.52,22.52,0,0,1,291.5,281m0-1A23.5,23.5,0,1,0,315,303.5,23.5,23.5,0,0,0,291.5,280Z" transform="translate(-176 -194.88)"></path>
+                            <path xmlns="http://www.w3.org/2000/svg" class="arrow" d="M399,257.5a135.18,135.18,0,0,0-41.16-42.17c-22.7-14.74-49.38-21.92-75.15-20.2a108.71,108.71,0,0,0-65.16,27c-19.91,17.5-33.76,41.79-41.18,72.19a13.52,13.52,0,0,0,9.92,16.32,13.66,13.66,0,0,0,3.21.38,13.51,13.51,0,0,0,13.11-10.3c6.07-24.92,17.1-44.54,32.76-58.31a82,82,0,0,1,49.13-20.32c20-1.33,40.81,4.32,58.65,15.9A108.07,108.07,0,0,1,374,268.51l-30,13.2,72.43,40.36,8.6-76Z" transform="translate(-176 -194.88)"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="greeting-panel">
+                <form class="hidden" id="login-form">
+                    <input maxlength="15" type="text" required="required" placeholder="YOUR NAME?" />
+                </form>
+                <h1 class="hidden" id="greeting"></h1>
             </div>
         </div>
     </div>
 
-
-    <!--
-
-    <form class="hidden" id="login-form">
-        <input
-            required
-            maxlength="15"
-            type="text"
-            placeholder="What is your name?"
-        />
-        <input type="submit" value="Log In" />
-    </form>
-    <h1 class="hidden" id="greeting"></h1>
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-        <span></span>
-        <span></span>
+    <div class="todo-panel">
+        <form id="todo-form">
+            <input type="text" placeholder="Write a To Do and Press Enter" required />
+        </form>
+        <ul id="todo-list"></ul>
     </div>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
--->
+
     <script src="js/background.js"></script>
     <script src="js/clock.js"></script>
-
-    <!--
-    <script src="js/greetings.js"></script>
     <script src="js/quotes.js"></script>
-    <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
-    -->
+    <script src="js/greetings.js"></script>
+    <script src="js/todo.js"></script>
 </body>
 </html>

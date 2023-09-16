@@ -98,29 +98,16 @@ table {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: transparent;
+    background-color: #bebebe;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.background-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    opacity: 1;
-    background-image: url(../img/overlay.png);
-    background-size: 100% 100%;
-    transition: opacity 0.3s ease-out;
-}
-
 /* icon */
 .control {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -140,31 +127,187 @@ table {
     cursor: pointer;
 }
 
-/* clock */
-.clock {
+/* center-panel */
+.center-panel {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    font-size: 1050%;
     color: #fff;
     transform: translate(-50%, -50%);
     z-index: 2;
     font-weight: bold;
-    width: 530px;
-    display: flex;
-    justify-content: center;
+    width: 600px;
+    height: 300px;
+    text-align: center;
 }
-.clock > div {
-    height: 150px;
+
+.center-panel #time {
+    font-size: 168px;
+    width: 600px;
+    height: 200px;
+    line-height: 200px;
+    text-shadow: 0px 0px 10px #000;
 }
-.clock #clock {
-    width: 430px;
+
+.center-panel .button-area {
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-.clock > div:first-child {
-    width: 50px;
-    margin-left: 25px;
+
+.center-panel .button-area > div {
+    position: absolute;
+    height: 46px;
+    width: 46px;
+    overflow: hidden;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
 }
-.clock > div:last-child {
-    width: 50px;
-    margin-left: 25px;
+
+.center-panel .button-area button {
+    height: 46px;
+    width: 46px;
+    border: 0;
+    display: block;
+    background: none;
+}
+
+.center-panel .button-area > div:after {
+    display: none;
+    height: 46px;
+    width: 46px;
+    border: 0;
+    border-radius: 23px;
+    background: #000;
+    cursor: pointer;
+    opacity: .3;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.center-panel .button-area > div:hover:after {
+    display: block;
+}
+
+.center-panel .button-area div.background-change {
+    right: 0;
+    left: unset;
+}
+
+.center-panel .greeting-panel {
+    width: 100%;
+    height: 100px;
+    padding-top: 50px;
+}
+
+.greeting-panel form {
+    width: 60%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.greeting-panel input {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 10px #000;
+    font-size: 45px;
+}
+
+.greeting-panel input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+} /* outline 테두리 없애기 */
+
+.greeting-panel h1 {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 10px #000;
+    font-size: 45px;
+}
+
+/* header */
+header {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: #fff;
+}
+
+#quote {
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px #000;
+    text-align: center;
+}
+
+#weather {
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-shadow: 0px 0px 10px #000;
+}
+
+/* weather */
+#weather > span {
+    display: block;
+}
+#weather > span:first-child {
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 50px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    text-align: right;
+}
+#weather > span:last-child {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* todo */
+.todo-panel {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    font-weight: bold;
+    width: 600px;
+    height: 350px;
+    text-align: center;
+}
+
+.todo-panel input {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 10px #000;
+    font-size: 40px;
+}
+
+.todo-panel input::placeholder {
+    color: #fff;
 }
