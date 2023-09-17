@@ -11,8 +11,11 @@
     function getClock() {
         const date = new Date();
         let h = date.getHours();
-        if (clockType === "N") h = h % 12;
-        const hours = String(h).padStart(2, "0");
+        let hours = String(h).padStart(2, "0");
+        if (clockType === "N") {
+            h = h % 12 || 12;
+            hours = h >= 12 ? `PM ${h}` : `AM ${h}`;
+        }
         const minutes = String(date.getMinutes()).padStart(2, "0");
         time.innerText = `${hours}:${minutes}`;
     }
